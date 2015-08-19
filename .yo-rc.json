@@ -1,0 +1,20 @@
+{
+  "generator-m": {
+    "answers": {
+      "appName": "Hashtags",
+      "appId": "com.jesseluoto.hashtags",
+      "bowerPackages": [],
+      "platforms": [
+        "ios",
+        "android"
+      ],
+      "plugins": [
+        "cordova-plugin-device",
+        "cordova-plugin-dialogs",
+        "cordova-plugin-network-information",
+        "cordova-plugin-splashscreen"
+      ],
+      "appModule": "Hashtags"
+    }
+  }
+}
