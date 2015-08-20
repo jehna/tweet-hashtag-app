@@ -9,7 +9,7 @@
     "catch"
   ],
   "requireOperatorBeforeLineBreak": true,
-  "validateIndentation": 2,
+  "validateIndentation": 4,
   "disallowMultipleLineStrings": true,
   "disallowMixedSpacesAndTabs": true,
   "disallowTrailingWhitespace": true,
