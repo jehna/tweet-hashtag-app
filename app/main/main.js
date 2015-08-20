@@ -15,8 +15,8 @@ angular.module('main', [
     // this state is placed in the <ion-nav-view> in the index.html
     .state('main', {
       url: '/main',
-      template: '<ion-view view-title="main"></ion-view>',
-      // templateUrl: 'main/templates/<someTemplate>.html',
+      //template: '<ion-view view-title="Hashtags"></ion-view>',
+      templateUrl: 'main/templates/list-hashtags.html',
       // controller: 'SomeCtrl as ctrl'
     });
 });

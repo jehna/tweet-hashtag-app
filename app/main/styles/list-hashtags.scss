@@ -1,0 +1,17 @@
+.list-hashtags {
+    .item {
+        color: #000;
+    }
+    
+    .title {
+        font-size: 22px;
+    }
+    .latest-tweet-date {
+        opacity: 0.375;
+    }
+    .latest-tweet {
+        opacity: 0.375;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+}
