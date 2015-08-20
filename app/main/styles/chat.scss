@@ -3,7 +3,7 @@
     
     a {
         text-decoration: none;
-        font-weight: 600;
+        font-weight: bold;
         color: inherit;
     }
     
@@ -72,5 +72,24 @@
                 border-top-color: #782167;
             }
         }
+    }
+}
+
+#tweet-button {
+    border: 0;
+    background: transparent;
+    text-transform: uppercase;
+    text-align: center;
+    width: 100%;
+    min-height: 0;
+    line-height: initial;
+    vertical-align: middle;
+}
+
+.tweet-input {
+    vertical-align: middle;
+    
+    &:after {
+        content: " #travelmassive";
     }
 }
