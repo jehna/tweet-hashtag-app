@@ -19,8 +19,14 @@ angular.module('main', [
         controller: 'ListHashtagsCtrl'
     })
     .state('chat', {
-        url: '/chat',
-        templateUrl: 'main/templates/chat.html'
+        url: '/chat/:hashtag',
+        templateUrl: 'main/templates/chat.html',
+        controller: 'ChatCtrl',
+        resolve: {
+            hashtag: function ($stateParams, MyHashtags) {
+                return MyHashtags.getHashtag($stateParams.hashtag);
+            }
+        }
     })
     .state('login', {
         url: '/login',

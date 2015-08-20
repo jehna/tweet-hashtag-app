@@ -21,6 +21,8 @@
 
   "globals": {
     "angular": false,
-    "TwitterConnect": true
+    "TwitterConnect": true,
+    "hello": true,
+    "navigator": true
   }
 }

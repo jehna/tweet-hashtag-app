@@ -4,11 +4,13 @@
     <ion-content class="list-hashtags" has-header="true">
         <!-- our list and list items -->
         <ion-list>
-            <ion-item href="#/chat">
-                <div class="title">#reaktorbreakpoint</div>
-                <div class="latest-tweet-date">15/8/2015</div>
-                <div class="latest-tweet">Lorem ipsum dolor sit amet moikka moi mitä sulle kuuluupi</div>
+            <ion-item ng-repeat="hashtag in hashtags" ui-sref='chat({ hashtag: hashtag.name })'>
+                <div class="title">#{{ hashtag.name }}</div>
+                <div class="latest-tweet-date">...</div>
+                <div class="latest-tweet">Loading latest tweet...</div>
             </ion-item>
         </ion-list>
     </ion-content>
+    
+    <div id="add-new-hashtag" ng-click="addNewHashtag()"><i class="ion-ios-plus-empty"></i></div>
 </ion-view>
