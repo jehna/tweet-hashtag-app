@@ -16,10 +16,15 @@ angular.module('main', [
         url: '/main',
         //template: '<ion-view view-title="Hashtags"></ion-view>',
         templateUrl: 'main/templates/list-hashtags.html',
-        // controller: 'SomeCtrl as ctrl'
+        controller: 'ListHashtagsCtrl'
     })
     .state('chat', {
         url: '/chat',
         templateUrl: 'main/templates/chat.html'
+    })
+    .state('login', {
+        url: '/login',
+        templateUrl: 'main/templates/login.html',
+        controller: 'LoginCtrl'
     });
 });
