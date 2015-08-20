@@ -84,6 +84,11 @@
     min-height: 0;
     line-height: initial;
     vertical-align: middle;
+    color: $positive;
+    
+    &[disabled] {
+        color: #666;
+    }
 }
 
 .tweet-input {

@@ -1,4 +1,4 @@
-<ion-view title="#travelmassive">
+<ion-view title="#{{ hashtag.name }}">
     <ion-nav-bar class="bar-positive">
         <ion-nav-back-button class="button-clear">
             <i class="ion-chevron-left"></i> Back
@@ -29,11 +29,16 @@
     <ion-footer-bar align-title="left" class="bar-light">
         <div class="row">
             <div class="col col-75">
-                <div contenteditable="true" class="tweet-input"></div>
+                <style>
+                .tweet-input:after {
+                    content: " #{{ hashtag.name }}";
+                }
+                </style>
+                <div contentEditable="true" class="tweet-input" ng-model="input"></div>
             </div>
             <div class="col">
                 <div class="buttons">
-                    <button class="button" id="tweet-button" disabled>Tweet</button>
+                    <button class="button" id="tweet-button" ng-disabled="!input">Tweet</button>
                 </div>
             </div>
         </div>
