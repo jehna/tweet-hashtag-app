@@ -30,16 +30,26 @@ angular.module('main')
         });
     };
 
+    var to;
+    var shutdown = false;
     function loadMostRecent() {
-        $timeout(function () {
+        to = $timeout(function () {
             MyHashtags.loadMostRecent(hashtag.name)
             .then(function (tweets) {
                 $scope.tweets = tweets;
             })
             .finally(function () {
-                loadMostRecent();
+                if (!shutdown) {
+                    loadMostRecent();
+                }
             });
-        }, 1000 * 5);
+        }, 1000 * 2);
     }
     loadMostRecent();
+    $scope.$on('$destroy', function () {
+        if (to) {
+            shutdown = true;
+            $timeout.cancel(to);
+        }
+    });
 });
