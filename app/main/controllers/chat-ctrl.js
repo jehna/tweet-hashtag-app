@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-.controller('ChatCtrl', function (hashtag, $scope, MyHashtags, Session) {
+.controller('ChatCtrl', function (hashtag, $scope, MyHashtags, Session, $timeout) {
     $scope.hashtag = hashtag;
 
     $scope.userID = Session.getUserID();
@@ -19,4 +19,17 @@ angular.module('main')
             $scope.$broadcast('scroll.infiniteScrollComplete');
         });
     };
+
+    function loadMostRecent() {
+        $timeout(function () {
+            MyHashtags.loadMostRecent(hashtag.name)
+            .then(function (tweets) {
+                $scope.tweets = tweets;
+            })
+            .finally(function () {
+                loadMostRecent();
+            });
+        }, 1000 * 5);
+    }
+    loadMostRecent();
 });

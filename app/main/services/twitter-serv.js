@@ -52,5 +52,33 @@ angular.module('main')
         return deferred.promise;
     };
 
+    Twitter.prototype.loadMostRecent = function (hashtag) {
+        var tweets = tempStorage[hashtag];
+        var deferred = $q.defer();
+
+        if (tweets) {
+            var options = {
+                'result_type': 'recent',
+                'count': 10
+            };
+            var sinceId = 'since_id';
+            options[sinceId] = tweets[0].id;
+
+            $twitterApi.searchTweets('#' + hashtag, options)
+            .then(function (data) {
+                data.statuses.pop();
+                tempStorage[hashtag] = tempStorage[hashtag] || [];
+                tempStorage[hashtag] = data.statuses.concat(tempStorage[hashtag]);
+                deferred.resolve(tempStorage[hashtag]);
+            }, function (error) {
+                deferred.reject(error);
+            });
+        } else {
+            deferred.reject('No tweets yet');
+        }
+
+        return deferred.promise;
+    };
+
     return new Twitter();
 });

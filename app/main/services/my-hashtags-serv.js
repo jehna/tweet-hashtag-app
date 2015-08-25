@@ -53,5 +53,9 @@ angular.module('main')
         return Twitter.loadMore(hashtag);
     };
 
+    MyHashtags.prototype.loadMostRecent = function (hashtag) {
+        return Twitter.loadMostRecent(hashtag);
+    };
+
     return new MyHashtags();
 });
