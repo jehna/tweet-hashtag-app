@@ -50,7 +50,7 @@ gulp.task('wiredep', function () {
 
   return gulp.src('app/index.html')
      // exclude ionic scss since we're using ionic sass
-    .pipe(wiredep.stream({exclude: ['bower_components/ionic/release/css']}))
+    .pipe(wiredep.stream({exclude: ['bower_components/ionic/release/css'], onMainNotFound: function(pkg) { console.log(pkg); }}))
     .pipe(gulp.dest('app/'));
 });
 

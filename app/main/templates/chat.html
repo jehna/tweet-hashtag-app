@@ -6,41 +6,15 @@
     </ion-nav-bar>
     <ion-content has-header="true" has-padding="true" class="chat-view">
         <ion-list>
-            <ion-list-item class="">
-                <div class="user-image"><img src="https://pbs.twimg.com/profile_images/516818692428939264/tDLkUc1q_bigger.png"></div>
+            <ion-list-item ng-repeat="tweet in tweets" ng-class="{ 'own': tweet.user.id === userID }">
+                <div class="user-image"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
                 <div class="speech-bubble">
-                    <div class="poster">@travelmassive</div>
+                    <div class="poster">@{{ tweet.user.screen_name }}</div>
                     <div class="message">
-                        Silicon Valley #TravelMassive with <a href="">@gogobot</a> <a href="">http://ow.ly/QRiRi</a>  via <a href="">@caskifer</a>
+                        {{ tweet.text }}
                     </div>
                 </div>
             </ion-list-item>
-                <ion-list-item class="own">
-                    <div class="user-image"><img src="https://pbs.twimg.com/profile_images/378800000167034273/e2de8198a0d22e93512a07bb0a3c2021_bigger.jpeg"></div>
-                    <div class="speech-bubble">
-                        <div class="poster">@luotojesse</div>
-                        <div class="message">
-                            Hellowe how world! #travelmassive
-                        </div>
-                    </div>
-                </ion-list-item>
         </ion-list>
     </ion-content>
-    <ion-footer-bar align-title="left" class="bar-light">
-        <div class="row">
-            <div class="col col-75">
-                <style>
-                .tweet-input:after {
-                    content: " #{{ hashtag.name }}";
-                }
-                </style>
-                <div contentEditable="true" class="tweet-input" ng-model="input"></div>
-            </div>
-            <div class="col">
-                <div class="buttons">
-                    <button class="button" id="tweet-button" ng-disabled="!input">Tweet</button>
-                </div>
-            </div>
-        </div>
-    </ion-footer-bar>
 </ion-view>

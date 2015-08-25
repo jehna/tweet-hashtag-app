@@ -30,6 +30,6 @@
     <plugin name="cordova-plugin-network-information" spec="^1.0.1" />
     <plugin name="cordova-plugin-splashscreen" spec="^2.1.0" />
     
-    <preference name="TwitterConsumerKey" value="JV7QN57Qeme0A9GHH2bFaDOhU" />
-    <preference name="TwitterConsumerSecret" value="yWOEBsbaP3AirUN70GmoEhRh0FaVH2O7tRUw7Eex8XQO7QABTX" />
+    <preference name="TwitterConsumerKey" value="KyBdbOxwIFJaU0n4r7oeFVUpO" />
+    <preference name="TwitterConsumerSecret" value="8FJQLKichQOjeTiAV1n0ODoiSBnh1GxQ2oVaZqYjLVFiM3wTW1" />
 </widget>

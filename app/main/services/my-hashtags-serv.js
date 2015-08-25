@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-.service('MyHashtags', function ($window) {
+.service('MyHashtags', function ($window, Twitter) {
     function MyHashtags() {
         this.list = $window.JSON.parse($window.localStorage.myHashtags || '""');
         if (!Array.isArray(this.list)) {
@@ -43,6 +43,10 @@ angular.module('main')
             }
         }
         return null;
+    };
+
+    MyHashtags.prototype.refresh = function (hashtag) {
+        return Twitter.getHashtag(hashtag);
     };
 
     return new MyHashtags();

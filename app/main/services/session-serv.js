@@ -1,19 +1,6 @@
 'use strict';
 angular.module('main')
 .service('Session', function ($window) {
-    $window.TwitterConnect = $window.TwitterConnect || {
-        'login': function (success) {
-            success({
-                userName: 'luotojesse',
-                userId: 237606499,
-                secret: 'tHXYi75v90WVfyUKij1JLpgsaUfHYFnSc4BNLyId12iXf',
-                token: '237606499-QqYXaj7FBxzBzUVlhOV0AgSfsRtWdBwt4FQzvCC2'
-            });
-        },
-        'logout': function (success) {
-            success();
-        }
-    };
 
     function Session() {
     }
@@ -23,7 +10,7 @@ angular.module('main')
     };
 
     Session.prototype.login = function (success, fail) {
-        TwitterConnect.login(
+        $window.TwitterConnect.login(
             function (result) {
                 $window.localStorage.userName = result.userName;
                 $window.localStorage.userId = result.userId;
@@ -44,6 +31,27 @@ angular.module('main')
         $window.localStorage.userId = null;
         $window.localStorage.secret = null;
         $window.localStorage.token = null;
+    };
+
+    Session.prototype.getToken = function () {
+        return $window.localStorage.token;
+    };
+
+    Session.prototype.getSecret = function () {
+        return $window.localStorage.secret;
+    };
+
+    Session.prototype.getUserID = function () {
+        return $window.localStorage.userId;
+    };
+
+    Session.prototype.getRawToken = function () {
+        return {
+            'userName': $window.localStorage.userName,
+            'userId': $window.localStorage.userId,
+            'secret': $window.localStorage.secret,
+            'token': $window.localStorage.token
+        };
     };
 
     return new Session();
