@@ -43,7 +43,7 @@ angular.module('main')
                     loadMostRecent();
                 }
             });
-        }, 1000 * 2);
+        }, 1000 * 10);
     }
     loadMostRecent();
     $scope.$on('$destroy', function () {
