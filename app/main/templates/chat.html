@@ -7,10 +7,10 @@
     <ion-content has-header="true" has-padding="true" class="chat-view" infinite-scroll="loadMore()">
         <ion-list>
             <ion-list-item ng-repeat="tweet in tweets" ng-class="{ 'own': tweet.user.id == userID }">
-                <div class="user-image"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
+                <div class="user-image" ng-click="openUser(tweet.user.screen_name)"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
                 <div class="speech-bubble">
-                    <div class="poster">@{{ tweet.user.screen_name }}</div>
-                    <div class="message">
+                    <div class="poster" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</div>
+                    <div class="message" ng-click="openTweet(tweet.id_str)">
                         {{ tweet.text }}
                     </div>
                 </div>

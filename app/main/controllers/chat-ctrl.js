@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-.controller('ChatCtrl', function (hashtag, $scope, MyHashtags, Session, $timeout) {
+.controller('ChatCtrl', function (hashtag, $scope, MyHashtags, Session, $timeout, $window) {
     $scope.hashtag = hashtag;
 
     $scope.userID = Session.getUserID();
@@ -9,6 +9,16 @@ angular.module('main')
     .then(function (tweets) {
         $scope.tweets = tweets;
     });*/
+
+    $scope.openUser = function (screenName) {
+        console.log(screenName);
+        $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
+    };
+
+    $scope.openTweet = function (tweetID) {
+        console.log(tweetID);
+        $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
+    };
 
     $scope.loadMore = function () {
         MyHashtags.loadMore(hashtag.name)
