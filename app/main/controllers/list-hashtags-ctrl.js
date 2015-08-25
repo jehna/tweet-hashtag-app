@@ -19,4 +19,8 @@ angular.module('main')
             '#hashtag'
         );
     };
+
+    $scope.removeHashtag = function (hashtag) {
+        MyHashtags.remove(hashtag);
+    };
 });

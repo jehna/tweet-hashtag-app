@@ -3,11 +3,12 @@
     </ion-nav-bar>
     <ion-content class="list-hashtags" has-header="true">
         <!-- our list and list items -->
-        <ion-list>
+        <ion-list can-swipe="true">
             <ion-item ng-repeat="hashtag in hashtags" ui-sref='chat({ hashtag: hashtag.name })'>
                 <div class="title">#{{ hashtag.name }}</div>
-                <!-- <div class="latest-tweet-date">...</div> -->
-                <!-- <div class="latest-tweet">Loading latest tweet...</div> -->
+                <!--<div class="latest-tweet-date">&nbsp;</div>
+                <div class="latest-tweet">&nbsp;</div>-->
+                <ion-option-button class="button-assertive" ng-click="removeHashtag(hashtag.name)">Remove</ion-option-button>
             </ion-item>
         </ion-list>
     </ion-content>

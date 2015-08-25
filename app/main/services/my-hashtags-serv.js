@@ -36,6 +36,16 @@ angular.module('main')
         }
     };
 
+    MyHashtags.prototype.remove = function (hashtag) {
+        for (var i = 0; i < this.list.length; i++) {
+            if (this.list[i].name === hashtag) {
+                this.list.splice(i, 1);
+                break;
+            }
+        }
+        this.save();
+    };
+
     MyHashtags.prototype.getHashtag = function (hashtag) {
         for (var i = 0; i < this.list.length; i++) {
             if (this.list[i].name === hashtag) {
