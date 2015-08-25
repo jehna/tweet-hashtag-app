@@ -1,6 +1,10 @@
 # Hashtags app
 > Easilly follow any hashtag
 
+## Screenshots
+<img src="https://cloud.githubusercontent.com/assets/2676795/9478522/1e5aa4ca-4b81-11e5-8e4a-5d5d0100ad68.png" width="320"><img src="https://cloud.githubusercontent.com/assets/2676795/9478525/20662582-4b81-11e5-9203-78f7e7f7ba38.png" width="320">
+
+
 ## Install
 
 ### Prerequisites
