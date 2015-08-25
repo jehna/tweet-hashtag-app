@@ -28,5 +28,29 @@ angular.module('main')
         return deferred.promise;
     };
 
+    Twitter.prototype.loadMore = function (hashtag) {
+        var tweets = tempStorage[hashtag];
+        var deferred = $q.defer();
+
+        var options = {
+            'result_type': 'recent',
+            'count': 10
+        };
+        if (tweets) {
+            var maxId = 'max_id';
+            options[maxId] = tweets[tweets.length - 1].id;
+        }
+        $twitterApi.searchTweets('#' + hashtag, options)
+        .then(function (data) {
+            tempStorage[hashtag] = tempStorage[hashtag] || [];
+            tempStorage[hashtag] = tempStorage[hashtag].concat(data.statuses);
+            deferred.resolve(tempStorage[hashtag]);
+        }, function (error) {
+            deferred.reject(error);
+        });
+
+        return deferred.promise;
+    };
+
     return new Twitter();
 });

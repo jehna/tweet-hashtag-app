@@ -49,5 +49,9 @@ angular.module('main')
         return Twitter.getHashtag(hashtag);
     };
 
+    MyHashtags.prototype.loadMore = function (hashtag) {
+        return Twitter.loadMore(hashtag);
+    };
+
     return new MyHashtags();
 });
