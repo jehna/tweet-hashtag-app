@@ -18,21 +18,5 @@
         </ion-list>
         <ion-infinite-scroll on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
     </ion-content>
-    <!-- <ion-footer-bar align-title="left" class="bar-light">
-        <div class="row">
-            <div class="col col-75">
-                <style>
-                .tweet-input:after {
-                    content: " #{{ hashtag.name }}";
-                }
-                </style>
-                <div contentEditable="true" class="tweet-input" ng-model="input"></div>
-            </div>
-            <div class="col">
-                <div class="buttons">
-                    <button class="button" id="tweet-button" ng-disabled="!input">Tweet</button>
-                </div>
-            </div>
-        </div>
-    </ion-footer-bar>-->
+    <div class="add-new-btn" ng-click="newTweet(hashtag.name)"><i class="ion-ios-plus-empty"></i></div>
 </ion-view>

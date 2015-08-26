@@ -30,6 +30,10 @@ angular.module('main')
         });
     };
 
+    $scope.newTweet = function (hashtag) {
+        $window.open('twitter://post?message=%23' + hashtag, '_system', 'location=no');
+    };
+
     var to;
     var shutdown = false;
     function loadMostRecent() {
