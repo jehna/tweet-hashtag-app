@@ -26,6 +26,10 @@
         position: relative;
         display: block;
         padding-top: 35px;
+        
+        &.retweet {
+            padding-top: 6px;
+        }
     }
 
     .speech-bubble {
@@ -72,6 +76,16 @@
                 border-top-color: #782167;
             }
         }
+    }
+    
+    .retweeter,
+    .retweetee {
+        color: $energized;
+        font-weight: bold;
+    }
+    .retweet-status {
+        color: $royal;
+        font-weight: bold;
     }
 }
 
