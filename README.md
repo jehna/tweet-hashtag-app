@@ -1,4 +1,4 @@
-# Hashtags app
+# Hashtags app <img src="https://github.com/jehna/tweet-hashtag-app/blob/master/res/android/72.png?raw=true" width="36" style="vertical-align: bottom;margin-left: 20px;">
 > Easilly follow any hashtag
 
 ## Screenshots
