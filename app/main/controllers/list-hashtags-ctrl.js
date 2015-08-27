@@ -12,6 +12,7 @@ angular.module('main')
             function (result) {
                 result = /\w+/.exec(result)[0];
                 MyHashtags.add(result);
+                $scope.$apply();
             },
             function () {},
             'Add new Hashtag',
@@ -22,5 +23,6 @@ angular.module('main')
 
     $scope.removeHashtag = function (hashtag) {
         MyHashtags.remove(hashtag);
+        $scope.$apply();
     };
 });
