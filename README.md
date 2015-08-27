@@ -1,5 +1,5 @@
 # Hashtags app <img src="https://github.com/jehna/tweet-hashtag-app/blob/master/res/android/72.png?raw=true" width="36" style="vertical-align: bottom;margin-left: 20px;">
-> Easilly follow any hashtag
+> Hashtags is an app that allows you to easily track and Tweet on hashtags
 
 ## Screenshots
 <img src="https://cloud.githubusercontent.com/assets/2676795/9478522/1e5aa4ca-4b81-11e5-8e4a-5d5d0100ad68.png" width="320"><img src="https://cloud.githubusercontent.com/assets/2676795/9478525/20662582-4b81-11e5-9203-78f7e7f7ba38.png" width="320">
