@@ -3,7 +3,7 @@
     </ion-nav-bar>
     <ion-content class="list-hashtags" has-header="true">
         <!-- our list and list items -->
-        <div ng-if="hashtags">
+        <div ng-if="hashtags.length">
             <h2 class="list-header">My hashtags</h2>
             <ion-list can-swipe="true">
                 <ion-item ng-repeat="hashtag in hashtags" ui-sref='hashtag({ hashtag: hashtag.name })'>
@@ -14,7 +14,7 @@
                 </ion-item>
             </ion-list>
         </div>
-        <div ng-if="lists">
+        <div ng-if="lists.length">
             <h2 class="list-header">My lists</h2>
             <ion-list>
                 <ion-item ng-repeat="list in lists"  ui-sref='list({ listid: list.id })'>

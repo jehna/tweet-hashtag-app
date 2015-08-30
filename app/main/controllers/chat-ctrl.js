@@ -4,7 +4,7 @@ angular.module('main')
     if (hashtag) {
         $scope.hashtag = hashtag;
     } else if (listid) {
-        $scope.listid = listid;
+        $scope.list = MyHashtags.getList(listid);
     }
 
     $scope.userID = Session.getUserID();
@@ -69,7 +69,7 @@ angular.module('main')
         if (hashtag) {
             return '#' + hashtag;
         } else {
-            return listid;
+            return $scope.list.name;
         }
     };
 });

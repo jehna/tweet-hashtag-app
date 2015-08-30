@@ -5,7 +5,8 @@ angular.module('main')
         $window.location.hash = '#/login';
     }
 
-    $scope.hashtags = MyHashtags.getList();
+    $scope.hashtags = MyHashtags.listHashtags();
+    $scope.lists = MyHashtags.listLists();
     $scope.addNewHashtag = function () {
         Dialogs.prompt(
             'Enter a new hashtag to add',
@@ -26,7 +27,7 @@ angular.module('main')
         $scope.$apply();
     };
 
-    MyHashtags.loadLists()
+    MyHashtags.refreshLists()
     .then(function (lists) {
         $scope.lists = lists;
     });
