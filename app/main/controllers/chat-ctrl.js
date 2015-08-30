@@ -39,7 +39,10 @@ angular.module('main')
     };
 
     $scope.newTweet = function (hashtag) {
-        $window.open('twitter://post?message=%23' + hashtag, '_system', 'location=no');
+        if (hashtag) {
+            hashtag = '%23' + hashtag;
+        }
+        $window.open('twitter://post?message=' + hashtag, '_system', 'location=no');
     };
 
     var to;
