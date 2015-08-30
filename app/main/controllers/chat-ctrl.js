@@ -70,7 +70,7 @@ angular.module('main')
     
     $scope.getTitle = function () {
         if (hashtag) {
-            return '#' + hashtag;
+            return '#' + hashtag.name;
         } else {
             return $scope.list.name;
         }
