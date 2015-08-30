@@ -20,7 +20,6 @@ angular.module('main')
     };
 
     $scope.openTweet = function (tweetID) {
-        console.log(tweetID);
         $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
     };
 
