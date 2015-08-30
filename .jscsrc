@@ -12,7 +12,7 @@
   "validateIndentation": 4,
   "disallowMultipleLineStrings": true,
   "disallowMixedSpacesAndTabs": true,
-  "disallowTrailingWhitespace": true,
+  "disallowTrailingWhitespace": "ignoreEmptyLines",
 
   "requireSpaceAfterKeywords": [
     "if",
