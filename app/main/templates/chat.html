@@ -1,4 +1,4 @@
-<ion-view title="#{{ hashtag.name }}">
+<ion-view title="{{ getTitle() }}">
     <ion-nav-bar class="bar-positive">
         <ion-nav-back-button class="button-clear">
             <i class="ion-chevron-left"></i> Back
@@ -23,5 +23,5 @@
         </ion-list>
         <ion-infinite-scroll on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
     </ion-content>
-    <div class="add-new-btn" ng-click="newTweet(hashtag.name)"><i class="ion-ios-plus-empty"></i></div>
+    <div class="add-new-btn" ng-click="newTweet(hashtag ? hashtag.name : '')"><i class="ion-ios-plus-empty"></i></div>
 </ion-view>

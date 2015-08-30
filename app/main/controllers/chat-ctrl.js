@@ -1,7 +1,11 @@
 'use strict';
 angular.module('main')
-.controller('ChatCtrl', function (hashtag, $scope, MyHashtags, Session, $timeout, $window) {
-    $scope.hashtag = hashtag;
+.controller('ChatCtrl', function (hashtag, listid, $scope, MyHashtags, Session, $timeout, $window) {
+    if (hashtag) {
+        $scope.hashtag = hashtag;
+    } else if (listid) {
+        $scope.listid = listid;
+    }
 
     $scope.userID = Session.getUserID();
 
@@ -21,8 +25,13 @@ angular.module('main')
     };
 
     $scope.loadMore = function () {
-        MyHashtags.loadMore(hashtag.name)
-        .then(function (tweets) {
+        var loader;
+        if (hashtag) {
+            loader = MyHashtags.loadMoreHashtag(hashtag.name);
+        } else {
+            loader = MyHashtags.loadMoreList(listid);
+        }
+        loader.then(function (tweets) {
             $scope.tweets = tweets;
         })
         .finally(function () {
@@ -56,4 +65,12 @@ angular.module('main')
             $timeout.cancel(to);
         }
     });
+    
+    $scope.getTitle = function () {
+        if (hashtag) {
+            return '#' + hashtag;
+        } else {
+            return listid;
+        }
+    };
 });

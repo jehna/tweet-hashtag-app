@@ -25,4 +25,9 @@ angular.module('main')
         MyHashtags.remove(hashtag);
         $scope.$apply();
     };
+
+    MyHashtags.loadLists()
+    .then(function (lists) {
+        $scope.lists = lists;
+    });
 });

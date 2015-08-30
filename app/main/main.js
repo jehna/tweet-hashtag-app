@@ -19,13 +19,31 @@ angular.module('main', [
         templateUrl: 'main/templates/list-hashtags.html',
         controller: 'ListHashtagsCtrl'
     })
-    .state('chat', {
-        url: '/chat/:hashtag',
+    .state('hashtag', {
+        url: '/hashtag/:hashtag',
         templateUrl: 'main/templates/chat.html',
         controller: 'ChatCtrl',
         resolve: {
             hashtag: function ($stateParams, MyHashtags) {
                 return MyHashtags.getHashtag($stateParams.hashtag);
+            },
+            listid: function () {
+                return null;
+            }
+        }
+    })
+    .state('list', {
+        url: '/list/:listid',
+        templateUrl: 'main/templates/chat.html',
+        controller: 'ChatCtrl',
+        resolve: {
+            hashtag: function () {
+                return null;
+            },
+            listid: function ($stateParams, $q) {
+                var deferred = $q.defer();
+                deferred.resolve($stateParams.listid);
+                return deferred.promise;
             }
         }
     })

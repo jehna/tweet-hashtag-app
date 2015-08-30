@@ -59,12 +59,20 @@ angular.module('main')
         return Twitter.getHashtag(hashtag);
     };
 
-    MyHashtags.prototype.loadMore = function (hashtag) {
-        return Twitter.loadMore(hashtag);
+    MyHashtags.prototype.loadMoreHashtag = function (hashtag) {
+        return Twitter.loadMoreHashtag(hashtag);
+    };
+
+    MyHashtags.prototype.loadMoreList = function (listID) {
+        return Twitter.loadMoreList(listID);
     };
 
     MyHashtags.prototype.loadMostRecent = function (hashtag) {
         return Twitter.loadMostRecent(hashtag);
+    };
+
+    MyHashtags.prototype.loadLists = function () {
+        return Twitter.loadLists();
     };
 
     return new MyHashtags();
