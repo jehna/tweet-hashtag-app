@@ -1,6 +1,6 @@
 'use strict';
 angular.module('main')
-.service('Session', function ($window) {
+.service('Session', function ($window, $cordovaOauth, Secrets) {
 
     function Session() {
     }
@@ -10,12 +10,12 @@ angular.module('main')
     };
 
     Session.prototype.login = function (success, fail) {
-        $window.TwitterConnect.login(
-            function (result) {
-                $window.localStorage.userName = result.userName;
-                $window.localStorage.userId = result.userId;
-                $window.localStorage.secret = result.secret;
-                $window.localStorage.token = result.token;
+        $cordovaOauth.twitter(Secrets.TWITTER_API_KEY, Secrets.TWITTER_API_SECRET)
+        .then(function (result) {
+                $window.localStorage.userName = result['screen_name'];
+                $window.localStorage.userId = result['user_id'];
+                $window.localStorage.secret = result['oauth_token_secret'];
+                $window.localStorage.token = result['oauth_token'];
                 success();
             },
             function (error) {
