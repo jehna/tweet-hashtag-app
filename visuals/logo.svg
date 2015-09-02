@@ -44,19 +44,15 @@
        y2="994.9765"
        gradientUnits="userSpaceOnUse"
        gradientTransform="matrix(3.6582038,0,0,3.6582038,-720.59215,-2653.2751)" />
-    <filter
-       inkscape:collect="always"
-       style="color-interpolation-filters:sRGB"
-       id="filter4519"
-       x="-0.024370164"
-       width="1.0487403"
-       y="-0.023640913"
-       height="1.0472818">
-      <feGaussianBlur
-         inkscape:collect="always"
-         stdDeviation="0.4285468"
-         id="feGaussianBlur4521" />
-    </filter>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath3024">
+      <path
+         style="fill:#ff0000;fill-opacity:1;stroke:none"
+         d="m -114.5625,847.29966 0,146.71875 c 0,10.38099 8.36897,18.74999 18.75,18.74999 l 18.75,0 0,-146.71874 c 0,-10.38103 -8.368966,-18.75 -18.75,-18.75 l -18.75,0 z"
+         id="path3026"
+         inkscape:connector-curvature="0" />
+    </clipPath>
   </defs>
   <sodipodi:namedview
      id="base"
@@ -65,9 +61,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.70710678"
-     inkscape:cx="194.50603"
-     inkscape:cy="13.442324"
+     inkscape:zoom="0.5"
+     inkscape:cx="57.226809"
+     inkscape:cy="111.19597"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -76,7 +72,8 @@
      inkscape:window-height="768"
      inkscape:window-x="1"
      inkscape:window-y="0"
-     inkscape:window-maximized="0" />
+     inkscape:window-maximized="0"
+     inkscape:object-nodes="false" />
   <metadata
      id="metadata7">
     <rdf:RDF>
@@ -85,7 +82,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -112,65 +109,6 @@
        y="832.04736"
        rx="0"
        ry="0" />
-    <g
-       id="g4537"
-       transform="matrix(3.6582038,0,0,3.6582038,-720.59215,-2653.2751)">
-      <path
-         style="opacity:0.60500004;fill:#474747;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4;filter:url(#filter4519)"
-         d="m 223.70247,957.22202 8.9393,0 -8.14814,43.50558 -8.93932,0 z"
-         id="path4409"
-         inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccc" />
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="use4411"
-         d="m 239.86584,957.22202 8.9393,0 -8.14814,43.50558 -8.93932,0 z"
-         style="opacity:0.60500004;fill:#474747;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4;filter:url(#filter4519)" />
-      <path
-         style="opacity:0.60500004;fill:#474747;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4;filter:url(#filter4519)"
-         d="m 210.86771,967.83791 42.20375,0 0,8.49044 -42.20375,0 z"
-         id="path4413"
-         inkscape:connector-curvature="0" />
-      <path
-         inkscape:connector-curvature="0"
-         id="use4415"
-         d="m 210.86771,982.98512 42.20375,0 0,8.49044 -42.20375,0 z"
-         style="opacity:0.60500004;fill:#474747;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4;filter:url(#filter4519)" />
-    </g>
-    <g
-       id="g4531"
-       transform="matrix(3.6582038,0,0,3.6582038,-720.59215,-2653.2751)">
-      <path
-         sodipodi:nodetypes="ccccc"
-         inkscape:connector-curvature="0"
-         id="rect4144"
-         d="m 223.95247,955.86847 8.9393,0 -8.39814,43.50561 -8.93932,0 z"
-         style="opacity:1;fill:#c9e0ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4" />
-      <use
-         height="100%"
-         width="100%"
-         transform="translate(16.163369,0)"
-         id="use4147"
-         xlink:href="#rect4144"
-         y="0"
-         x="0"
-         style="fill:#c9e0ff;fill-opacity:1" />
-      <path
-         inkscape:connector-curvature="0"
-         id="rect4149"
-         d="m 210.86771,966.48436 42.20375,0 0,8.49044 -42.20375,0 z"
-         style="opacity:1;fill:#c9e0ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4" />
-      <use
-         style="fill:#c9e0ff;fill-opacity:1"
-         height="100%"
-         width="100%"
-         transform="translate(-2.3683121e-6,15.147207)"
-         id="use4156"
-         xlink:href="#rect4149"
-         y="0"
-         x="0" />
-    </g>
     <rect
        style="opacity:1;fill:#c9e0ff;fill-opacity:1;stroke:none;stroke-width:2;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:0.4"
        id="rect4189"
@@ -180,5 +118,59 @@
        y="925.49414"
        rx="0"
        ry="0" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;opacity:0.16371681"
+       d="M 182.5625 47.28125 L 165.5625 62.375 L 156.3125 85.53125 L 129.125 94.65625 L 43 171 L 73.28125 201.28125 L 69.1875 204.9375 L 120.25 256 L 214.09375 256 C 237.31816 256 256 237.31816 256 214.09375 L 256 120.71875 L 182.5625 47.28125 z "
+       transform="translate(0,796.36216)"
+       id="rect3054" />
+    <g
+       id="g3042"
+       transform="translate(-0.68798,4.4546634)">
+      <rect
+         transform="matrix(1,0,-0.1880342,1,369.37869,-10.125203)"
+         clip-path="url(#clipPath3024)"
+         rx="6.3639617"
+         ry="5.9504657"
+         y="847.30121"
+         x="-114.5513"
+         height="165.46298"
+         width="37.476658"
+         id="rect3003"
+         style="fill:#ffffff;fill-opacity:1;stroke:none" />
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect3028"
+         width="37.476658"
+         height="165.46298"
+         x="-114.5513"
+         y="847.30121"
+         ry="5.9504657"
+         rx="6.3639617"
+         clip-path="url(#clipPath3024)"
+         transform="matrix(1,0,-0.1880342,1,429.37869,-10.125203)" />
+    </g>
+    <g
+       id="g3046"
+       transform="translate(-0.6878,2.4546611)">
+      <rect
+         style="fill:#ffffff;fill-opacity:1;stroke:none"
+         id="rect3038"
+         width="37.476658"
+         height="165.46298"
+         x="-114.5513"
+         y="847.30121"
+         ry="6.3639617"
+         rx="6.3639617"
+         clip-path="url(#clipPath3024)"
+         transform="matrix(0,1,-1,0,1060.7205,989.72047)" />
+      <use
+         height="256"
+         width="256"
+         transform="translate(-4,56)"
+         id="use3040"
+         xlink:href="#rect3038"
+         y="0"
+         x="0" />
+    </g>
   </g>
 </svg>
