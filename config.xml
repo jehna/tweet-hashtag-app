@@ -24,6 +24,11 @@
         <icon src="res/android/96.png" density="xhdpi" />
         <icon src="res/android/114.png" density="xxhdpi" />
         <icon src="res/android/192.png" density="xxxhdpi" />
+        
+        <splash src="res/screen/android/splash-port-hdpi.png" density="port-hdpi"/>
+        <splash src="res/screen/android/splash-port-ldpi.png" density="port-ldpi"/>
+        <splash src="res/screen/android/splash-port-mdpi.png" density="port-mdpi"/>
+        <splash src="res/screen/android/splash-port-xhdpi.png" density="port-xhdpi"/>
     </platform>
     <platform name="ios">
         <allow-intent href="itms:*" />
