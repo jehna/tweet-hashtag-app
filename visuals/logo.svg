@@ -17,9 +17,9 @@
    version="1.1"
    inkscape:version="0.48.5 r10040"
    sodipodi:docname="logo.svg"
-   inkscape:export-filename="/Users/jesseluoto/Omat/testi/random/hashtags-app/res/android/192.png"
-   inkscape:export-xdpi="67.5"
-   inkscape:export-ydpi="67.5">
+   inkscape:export-filename="/Users/jesseluoto/Omat/testi/random/hashtags-app/res/ios/180.png"
+   inkscape:export-xdpi="63.28125"
+   inkscape:export-ydpi="63.28125">
   <defs
      id="defs4">
     <linearGradient
@@ -61,9 +61,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.5"
-     inkscape:cx="57.226809"
-     inkscape:cy="111.19597"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="184.86137"
+     inkscape:cy="120.4117"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="false"
@@ -82,7 +82,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title />
+        <dc:title></dc:title>
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -119,10 +119,12 @@
        rx="0"
        ry="0" />
     <path
-       style="fill:#000000;fill-opacity:1;stroke:none;opacity:0.16371681"
-       d="M 182.5625 47.28125 L 165.5625 62.375 L 156.3125 85.53125 L 129.125 94.65625 L 43 171 L 73.28125 201.28125 L 69.1875 204.9375 L 120.25 256 L 214.09375 256 C 237.31816 256 256 237.31816 256 214.09375 L 256 120.71875 L 182.5625 47.28125 z "
+       style="opacity:0.16371681;fill:#000000;fill-opacity:1;stroke:none"
+       d="m 181.76562,48.25 -16.20312,14.125 -9.25,23.15625 -27.1875,9.125 -85.174825,76.10068 1.101573,2.07385 28.450473,28.45047 -2.900507,3.12592 0.0415,1.63249 L 120.60355,256 l 93.4902,0 C 237.31816,256 256,237.31816 256,214.09375 l 0,-93.26562 -71.19531,-71.195318 z"
        transform="translate(0,796.36216)"
-       id="rect3054" />
+       id="rect3054"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccccccccccssccc" />
     <g
        id="g3042"
        transform="translate(-0.68798,4.4546634)">
