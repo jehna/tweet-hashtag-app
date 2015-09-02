@@ -4,12 +4,17 @@ angular.module('main')
     var tempStorage = {};
 
     function Twitter() {
+        this.loggedin = false;
+    }
+    
+    Twitter.prototype.login = function () {
         var token = Session.getToken();
         var secret = Session.getSecret();
         if (token) {
             $twitterApi.configure(Secrets.TWITTER_API_KEY, Secrets.TWITTER_API_SECRET, { 'oauth_token': token, 'oauth_token_secret': secret });
+            this.loggedin = true;
         }
-    }
+    };
 
     Twitter.prototype.getHashtag = function (hashtag) {
         var options = {

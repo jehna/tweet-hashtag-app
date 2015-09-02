@@ -1,9 +1,20 @@
 'use strict';
 angular.module('main')
-.controller('ListHashtagsCtrl', function (Session, $window, MyHashtags, $scope, Dialogs) {
-    if (!Session.isLoggedIn()) {
-        $window.location.hash = '#/login';
-    }
+.controller('ListHashtagsCtrl', function (Session, $window, MyHashtags, $scope, Dialogs, Twitter) {
+    $scope.$on('$ionicView.enter', function () {
+        
+        if (!Session.isLoggedIn()) {
+            $window.location.hash = '#/login';
+            return;
+        }
+        
+        Twitter.login();
+        
+        MyHashtags.refreshLists()
+        .then(function (lists) {
+            $scope.lists = lists;
+        });
+    });
 
     $scope.hashtags = MyHashtags.listHashtags();
     $scope.lists = MyHashtags.listLists();
@@ -26,9 +37,4 @@ angular.module('main')
         MyHashtags.remove(hashtag);
         $scope.$apply();
     };
-
-    MyHashtags.refreshLists()
-    .then(function (lists) {
-        $scope.lists = lists;
-    });
 });
