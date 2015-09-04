@@ -1,6 +1,12 @@
 'use strict';
 angular.module('main')
 .controller('ChatCtrl', function (hashtag, listid, $scope, MyHashtags, Session, $timeout, $window) {
+    
+    var twitterScheme = 'twitter://';
+    if ($window.ionic.Platform.isAndroid()) {
+        twitterScheme = 'com.twitter.android';
+    }
+    
     if (hashtag) {
         $scope.hashtag = hashtag;
     } else if (listid) {
@@ -15,19 +21,25 @@ angular.module('main')
     });*/
 
     $scope.openUser = function (screenName) {
-        if ($window.ionic.Platform.isAndroid()) {
-            $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
-        } else {
-            $window.open('https://twitter.com/' + screenName, '_blank', 'location=yes');
-        }
+        $window.appAvailability.check(twitterScheme,
+            function () {
+                $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
+            },
+            function () {
+                $window.open('https://twitter.com/' + screenName, '_blank', 'location=yes');
+            }
+        );
     };
 
     $scope.openTweet = function (tweetID, screenName) {
-        if ($window.ionic.Platform.isAndroid()) {
-            $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
-        } else {
-            $window.open('https://twitter.com/' + screenName + '/status/' + tweetID, '_blank', 'location=yes');
-        }
+        $window.appAvailability.check(twitterScheme,
+            function () {
+                $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
+            },
+            function () {
+                $window.open('https://twitter.com/' + screenName + '/status/' + tweetID, '_blank', 'location=yes');
+            }
+        );
     };
 
     $scope.loadMore = function () {
@@ -46,14 +58,17 @@ angular.module('main')
     };
 
     $scope.newTweet = function (hashtag) {
-        if ($window.ionic.Platform.isAndroid()) {
-            if (hashtag) {
-                hashtag = '%23' + hashtag;
+        $window.appAvailability.check(twitterScheme,
+            function () {
+                if (hashtag) {
+                    hashtag = '%23' + hashtag;
+                }
+                $window.open('twitter://post?message=' + hashtag, '_system', 'location=no');
+            },
+            function () {
+                $window.open('https://twitter.com/intent/tweet?hashtags=' + hashtag, '_blank', 'location=yes');
             }
-            $window.open('twitter://post?message=' + hashtag, '_system', 'location=no');
-        } else {
-            $window.open('https://twitter.com/intent/tweet?hashtags=' + hashtag, '_blank', 'location=yes');
-        }
+        );
     };
 
     var to;
