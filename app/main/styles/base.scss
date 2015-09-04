@@ -18,3 +18,21 @@
         box-shadow: 0 1px 5px rgba(0, 0, 0, 0.4);
     }
 }
+
+// Rendering manipulation
+body {
+    display: block !important;
+    ion-nav-bar > ion-nav-title,
+    ion-nav-bar > ion-nav-back-button {
+        display: none;
+    }
+    
+    .header-item {
+        display: none;
+    }
+    &.platform-ready {
+        .header-item {
+            display: block;
+        }
+    }
+}
