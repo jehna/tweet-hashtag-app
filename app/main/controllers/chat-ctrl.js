@@ -101,4 +101,19 @@ angular.module('main')
             return $scope.list.name;
         }
     };
+    
+    $scope.getMediaSize = function (media) {
+        var bestMedia = '';
+        var targetSize = 400;
+        var closest = Infinity;
+        for (var m in media.sizes) {
+            var size = media.sizes[m];
+            var diff = Math.abs(size.w - targetSize);
+            if (diff < closest) {
+                bestMedia = ':' + m;
+                closest = diff;
+            }
+        }
+        return bestMedia;
+    };
 });

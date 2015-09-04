@@ -50,6 +50,18 @@
         }
     }
     
+    .tweet-image {
+        border-radius: 5px;
+        overflow: hidden;
+        margin: 10px 0 7px;
+        
+        img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+    }
+    
     .poster {
         position: absolute;
         top: -21px;

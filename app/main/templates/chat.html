@@ -6,10 +6,13 @@
                     <a class="retweeter" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</a> retweeted a <a class="retweet-status" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">tweet</a> by <a class="retweetee" ng-click="openUser(tweet.retweeted_status.user.screen_name)">@{{ tweet.retweeted_status.user.screen_name }}</a>
                 </div>
                 <div ng-if="!tweet.retweeted_status">
-                    <div class="user-image" ng-click="openUser(tweet.user.screen_name)"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
+                    <div class="user-image" ng-click="openUser(tweet.user.screen_name)"><img ng-src="{{ getBiggerProfileImage(tweet.user.profile_image_url_https) }}"></div>
                     <div class="speech-bubble">
                         <div class="poster" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</div>
                         <div class="message" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)" ng-bind-html="tweet.text"></div>
+                        <div ng-if="tweet.entities.media.length > 0" class="tweet-image" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">
+                            <img ng-src="{{ tweet.entities.media[0].media_url }}{{ getMediaSize(tweet.entities.media[0]) }}" />
+                        </div>
                     </div>
                 </div>
             </ion-list-item>
