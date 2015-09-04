@@ -5,7 +5,7 @@
     "angular-sanitize": "~1.4.1",
     "angular-ui-router": "~0.2.15",
     "ionic": "~1.0.0",
-    "ng-twitter-api": "~0.1.4",
+    "ng-twitter-api": "~0.1.5",
     "ngCordova": "~0.1.17-alpha"
   },
   "devDependencies": {},
