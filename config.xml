@@ -80,4 +80,5 @@
     
     <preference name="TwitterConsumerKey" value="KyBdbOxwIFJaU0n4r7oeFVUpO" />
     <preference name="TwitterConsumerSecret" value="8FJQLKichQOjeTiAV1n0ODoiSBnh1GxQ2oVaZqYjLVFiM3wTW1" />
+    <preference name="Orientation" value="portrait" />
 </widget>
