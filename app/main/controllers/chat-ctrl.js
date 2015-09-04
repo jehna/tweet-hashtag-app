@@ -116,4 +116,8 @@ angular.module('main')
         }
         return bestMedia;
     };
+    
+    $scope.getBiggerProfileImage = function (url) {
+        return url.replace('normal', 'bigger');
+    };
 });
