@@ -15,7 +15,6 @@ angular.module('main')
     });*/
 
     $scope.openUser = function (screenName) {
-        console.log(screenName);
         $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
     };
 
