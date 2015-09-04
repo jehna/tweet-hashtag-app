@@ -9,9 +9,7 @@
                     <div class="user-image" ng-click="openUser(tweet.user.screen_name)"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
                     <div class="speech-bubble">
                         <div class="poster" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</div>
-                        <div class="message" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">
-                            {{ tweet.text }}
-                        </div>
+                        <div class="message" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)" ng-bind-html="tweet.text"></div>
                     </div>
                 </div>
             </ion-list-item>
