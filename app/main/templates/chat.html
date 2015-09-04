@@ -3,13 +3,13 @@
         <ion-list>
             <ion-list-item ng-repeat="tweet in tweets" ng-class="{ 'own': tweet.user.id == userID, 'retweet': tweet.retweeted_status }">
                 <div ng-if="tweet.retweeted_status">
-                    <a class="retweeter" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</a> retweeted a <a class="retweet-status" ng-click="openTweet(tweet.id_str)">tweet</a> by <a class="retweetee" ng-click="openUser(tweet.retweeted_status.user.screen_name)">@{{ tweet.retweeted_status.user.screen_name }}</a>
+                    <a class="retweeter" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</a> retweeted a <a class="retweet-status" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">tweet</a> by <a class="retweetee" ng-click="openUser(tweet.retweeted_status.user.screen_name)">@{{ tweet.retweeted_status.user.screen_name }}</a>
                 </div>
                 <div ng-if="!tweet.retweeted_status">
                     <div class="user-image" ng-click="openUser(tweet.user.screen_name)"><img ng-src="{{ tweet.user.profile_image_url_https }}"></div>
                     <div class="speech-bubble">
                         <div class="poster" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</div>
-                        <div class="message" ng-click="openTweet(tweet.id_str)">
+                        <div class="message" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">
                             {{ tweet.text }}
                         </div>
                     </div>

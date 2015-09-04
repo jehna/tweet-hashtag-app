@@ -15,11 +15,19 @@ angular.module('main')
     });*/
 
     $scope.openUser = function (screenName) {
-        $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
+        if ($window.ionic.Platform.isAndroid()) {
+            $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
+        } else {
+            $window.open('https://twitter.com/' + screenName, '_blank', 'location=yes');
+        }
     };
 
-    $scope.openTweet = function (tweetID) {
-        $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
+    $scope.openTweet = function (tweetID, screenName) {
+        if ($window.ionic.Platform.isAndroid()) {
+            $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
+        } else {
+            $window.open('https://twitter.com/' + screenName + '/status/' + tweetID, '_blank', 'location=yes');
+        }
     };
 
     $scope.loadMore = function () {
@@ -38,10 +46,14 @@ angular.module('main')
     };
 
     $scope.newTweet = function (hashtag) {
-        if (hashtag) {
-            hashtag = '%23' + hashtag;
+        if ($window.ionic.Platform.isAndroid()) {
+            if (hashtag) {
+                hashtag = '%23' + hashtag;
+            }
+            $window.open('twitter://post?message=' + hashtag, '_system', 'location=no');
+        } else {
+            $window.open('https://twitter.com/intent/tweet?hashtags=' + hashtag, '_blank', 'location=yes');
         }
-        $window.open('twitter://post?message=' + hashtag, '_system', 'location=no');
     };
 
     var to;
