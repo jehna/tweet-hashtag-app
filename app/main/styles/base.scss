@@ -27,6 +27,14 @@ body {
         display: none;
     }
     
+    ion-nav-bar[nav-bar-transition='ios'] ion-header-bar {
+        height: 64px;
+    }
+    
+    ion-nav-view[nav-view-transition='ios'] .has-header {
+        top: 64px;
+    }
+    
     .header-item {
         display: none;
     }
