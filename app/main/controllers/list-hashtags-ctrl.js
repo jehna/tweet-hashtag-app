@@ -1,7 +1,9 @@
 'use strict';
 angular.module('main')
 .controller('ListHashtagsCtrl', function (Session, $window, MyHashtags, $scope, Dialogs, Twitter) {
+    
     $scope.$on('$ionicView.enter', function () {
+        $window.analytics.trackView('Hashtags');
         
         if (!Session.isLoggedIn()) {
             $window.location.hash = '#/login';
@@ -25,6 +27,8 @@ angular.module('main')
                 result = /\w+/.exec(result)[0];
                 MyHashtags.add(result);
                 $scope.$apply();
+                
+                $window.analytics.trackEvent('Hashtags', 'Added new hashtag', result);
             },
             function () {},
             'Add new Hashtag',
@@ -36,5 +40,7 @@ angular.module('main')
     $scope.removeHashtag = function (hashtag) {
         MyHashtags.remove(hashtag);
         $scope.$apply();
+        
+        $window.analytics.trackEvent('Hashtags', 'Removed hashtag', hashtag);
     };
 });

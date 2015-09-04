@@ -2,6 +2,10 @@
 angular.module('main')
 .controller('ChatCtrl', function (hashtag, listid, $scope, MyHashtags, Session, $timeout, $window) {
     
+    $scope.$on('$ionicView.enter', function () {
+        $window.analytics.trackView('List');
+    });
+    
     var twitterScheme = 'twitter://';
     if ($window.ionic.Platform.isAndroid()) {
         twitterScheme = 'com.twitter.android';
@@ -21,6 +25,8 @@ angular.module('main')
     });*/
 
     $scope.openUser = function (screenName) {
+        $window.analytics.trackEvent('Chat', 'Open User', screenName);
+        
         $window.appAvailability.check(twitterScheme,
             function () {
                 $window.open('twitter://user?screen_name=' + screenName, '_system', 'location=no');
@@ -32,6 +38,8 @@ angular.module('main')
     };
 
     $scope.openTweet = function (tweetID, screenName) {
+        $window.analytics.trackEvent('Chat', 'Open Tweet', tweetID);
+        
         $window.appAvailability.check(twitterScheme,
             function () {
                 $window.open('twitter://status?status_id=' + tweetID, '_system', 'location=no');
@@ -50,6 +58,8 @@ angular.module('main')
             loader = MyHashtags.loadMoreList(listid);
         }
         loader.then(function (tweets) {
+            $window.analytics.trackEvent('Chat', 'Loaded (more) tweets');
+            
             $scope.tweets = tweets;
         })
         .finally(function () {
@@ -58,6 +68,8 @@ angular.module('main')
     };
 
     $scope.newTweet = function (hashtag) {
+        $window.analytics.trackEvent('Chat', 'Posted new Tweet');
+        
         $window.appAvailability.check(twitterScheme,
             function () {
                 if (hashtag) {
