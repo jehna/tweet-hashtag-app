@@ -99,6 +99,14 @@
         color: $royal;
         font-weight: bold;
     }
+    
+    .all-tweets-loaded {
+        text-align: center;
+        color: #000;
+        opacity: 0.5;
+        font-size: 17px;
+        margin: 20px 0;
+    }
 }
 
 #tweet-button {

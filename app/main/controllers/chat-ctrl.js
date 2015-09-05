@@ -2,6 +2,8 @@
 angular.module('main')
 .controller('ChatCtrl', function (hashtag, listid, $scope, MyHashtags, Session, $timeout, $window) {
     
+    $scope.noMoreContent = false;
+    
     $scope.$on('$ionicView.enter', function () {
         $window.analytics.trackView('List');
     });
@@ -59,11 +61,15 @@ angular.module('main')
         }
         loader.then(function (tweets) {
             $window.analytics.trackEvent('Chat', 'Loaded (more) tweets');
-            
+            if (!tweets || tweets.length === 0 || ($scope.tweets && $scope.tweets.length === tweets.length)) {
+                $scope.noMoreContent = true;
+            }
             $scope.tweets = tweets;
         })
         .finally(function () {
-            $scope.$broadcast('scroll.infiniteScrollComplete');
+            if (!$scope.noMoreContent) {
+                $scope.$broadcast('scroll.infiniteScrollComplete');
+            }
         });
     };
 

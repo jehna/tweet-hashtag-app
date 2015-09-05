@@ -17,7 +17,10 @@
                 </div>
             </ion-list-item>
         </ion-list>
-        <ion-infinite-scroll on-infinite="loadMore()" distance="10%"></ion-infinite-scroll>
+        <div ng-if="noMoreContent" class="all-tweets-loaded">
+            All tweets loaded.
+        </div>
+        <ion-infinite-scroll on-infinite="loadMore()" distance="10%" ng-if="!noMoreContent"></ion-infinite-scroll>
     </ion-content>
     <div class="add-new-btn" ng-click="newTweet(hashtag ? hashtag.name : '')"><i class="ion-ios-plus-empty"></i></div>
 </ion-view>

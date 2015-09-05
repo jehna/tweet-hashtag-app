@@ -48,7 +48,7 @@ angular.module('main')
         $twitterApi.searchTweets('#' + hashtag, options)
         .then(function (data) {
             tempStorage[hashtag] = tempStorage[hashtag] || [];
-            if (tempStorage[hashtag].length > 0) {
+            if (tempStorage[hashtag].length > 0 && data.statuses.length) {
                 var last = tempStorage[hashtag][tempStorage[hashtag].length - 1];
                 var first = data.statuses[0];
                 if (last.id === first.id) {
@@ -81,7 +81,7 @@ angular.module('main')
         $twitterApi.getRequest('https://api.twitter.com/1.1/lists/statuses.json', options)
         .then(function (data) {
             tempStorage[listID] = tempStorage[listID] || [];
-            if (tempStorage[listID].length > 0) {
+            if (tempStorage[listID].length > 0 && data.length) {
                 var last = tempStorage[listID][tempStorage[listID].length - 1];
                 var first = data[0];
                 if (last.id === first.id) {
@@ -107,13 +107,15 @@ angular.module('main')
                 'result_type': 'recent',
                 'count': 10
             };
-            var sinceId = 'since_id';
-            options[sinceId] = tweets[0].id;
+            if (tweets.length > 0) {
+                var sinceId = 'since_id';
+                options[sinceId] = tweets[0].id;
+            }
 
             $twitterApi.searchTweets('#' + hashtag, options)
             .then(function (data) {
                 tempStorage[hashtag] = tempStorage[hashtag] || [];
-                if (tempStorage[hashtag].length && tempStorage[hashtag][0].id === data.statuses[data.statuses.length - 1].id) {
+                if (tempStorage[hashtag].length && data.statuses.length && tempStorage[hashtag][0].id === data.statuses[data.statuses.length - 1].id) {
                     data.statuses.pop();
                 }
                 tempStorage[hashtag] = data.statuses.concat(tempStorage[hashtag]);
@@ -138,13 +140,15 @@ angular.module('main')
                 'list_id': listID,
                 'count': 10
             };
-            var sinceId = 'since_id';
-            options[sinceId] = tweets[0].id;
+            if (tweets.length > 0) {
+                var sinceId = 'since_id';
+                options[sinceId] = tweets[0].id;
+            }
 
             $twitterApi.getRequest('https://api.twitter.com/1.1/lists/statuses.json', options)
             .then(function (data) {
                 tempStorage[listID] = tempStorage[listID] || [];
-                if (tempStorage[listID].length && tempStorage[listID][0].id === data[data.length - 1].id) {
+                if (tempStorage[listID].length && data.length && tempStorage[listID][0].id === data[data.length - 1].id) {
                     data.statuses.pop();
                 }
                 tempStorage[listID] = data.concat(tempStorage[listID]);
