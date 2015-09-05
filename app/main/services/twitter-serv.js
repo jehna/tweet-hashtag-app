@@ -149,7 +149,7 @@ angular.module('main')
             .then(function (data) {
                 tempStorage[listID] = tempStorage[listID] || [];
                 if (tempStorage[listID].length && data.length && tempStorage[listID][0].id === data[data.length - 1].id) {
-                    data.statuses.pop();
+                    data.pop();
                 }
                 tempStorage[listID] = data.concat(tempStorage[listID]);
                 deferred.resolve(tempStorage[listID]);
