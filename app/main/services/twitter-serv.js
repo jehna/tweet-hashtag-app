@@ -48,8 +48,8 @@ angular.module('main')
         $twitterApi.searchTweets('#' + hashtag, options)
         .then(function (data) {
             tempStorage[hashtag] = tempStorage[hashtag] || [];
-            if (tempStorage[listID].length > 0) {
-                var last = tempStorage[listID][tempStorage[listID].length - 1];
+            if (tempStorage[hashtag].length > 0) {
+                var last = tempStorage[hashtag][tempStorage[hashtag].length - 1];
                 var first = data.statuses[0];
                 if (last.id === first.id) {
                     // This happens only sometimes
@@ -112,8 +112,10 @@ angular.module('main')
 
             $twitterApi.searchTweets('#' + hashtag, options)
             .then(function (data) {
-                data.statuses.pop();
                 tempStorage[hashtag] = tempStorage[hashtag] || [];
+                if (tempStorage[hashtag].length && tempStorage[hashtag][0].id === data.statuses[data.statuses.length - 1].id) {
+                    data.statuses.pop();
+                }
                 tempStorage[hashtag] = data.statuses.concat(tempStorage[hashtag]);
                 deferred.resolve(tempStorage[hashtag]);
             }, function (error) {
@@ -141,8 +143,10 @@ angular.module('main')
 
             $twitterApi.getRequest('https://api.twitter.com/1.1/lists/statuses.json', options)
             .then(function (data) {
-                data.pop();
                 tempStorage[listID] = tempStorage[listID] || [];
+                if (tempStorage[listID].length && tempStorage[listID][0].id === data[data.length - 1].id) {
+                    data.statuses.pop();
+                }
                 tempStorage[listID] = data.concat(tempStorage[listID]);
                 deferred.resolve(tempStorage[listID]);
             }, function (error) {
