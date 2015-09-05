@@ -76,8 +76,12 @@ angular.module('main')
         return Twitter.loadMoreList(listID);
     };
 
-    MyHashtags.prototype.loadMostRecent = function (hashtag) {
-        return Twitter.loadMostRecent(hashtag);
+    MyHashtags.prototype.loadMostRecentHashtag = function (hashtag) {
+        return Twitter.loadMostRecentHashtag(hashtag);
+    };
+
+    MyHashtags.prototype.loadMostRecentList = function (listID) {
+        return Twitter.loadMostRecentList(listID);
     };
 
     MyHashtags.prototype.refreshLists = function () {

@@ -82,7 +82,7 @@ angular.module('main')
         return deferred.promise;
     };
 
-    Twitter.prototype.loadMostRecent = function (hashtag) {
+    Twitter.prototype.loadMostRecentHashtag = function (hashtag) {
         var tweets = tempStorage[hashtag];
         var deferred = $q.defer();
 
@@ -100,6 +100,35 @@ angular.module('main')
                 tempStorage[hashtag] = tempStorage[hashtag] || [];
                 tempStorage[hashtag] = data.statuses.concat(tempStorage[hashtag]);
                 deferred.resolve(tempStorage[hashtag]);
+            }, function (error) {
+                deferred.reject(error);
+            });
+        } else {
+            deferred.reject('No tweets yet');
+        }
+
+        return deferred.promise;
+    };
+
+    Twitter.prototype.loadMostRecentList = function (listID) {
+        listID = listID.toString();
+        var tweets = tempStorage[listID];
+        var deferred = $q.defer();
+        
+        if (tweets) {
+            var options = {
+                'list_id': listID,
+                'count': 10
+            };
+            var sinceId = 'since_id';
+            options[sinceId] = tweets[0].id;
+
+            $twitterApi.getRequest('https://api.twitter.com/1.1/lists/statuses.json', options)
+            .then(function (data) {
+                data.pop();
+                tempStorage[listID] = tempStorage[listID] || [];
+                tempStorage[listID] = data.concat(tempStorage[listID]);
+                deferred.resolve(tempStorage[listID]);
             }, function (error) {
                 deferred.reject(error);
             });

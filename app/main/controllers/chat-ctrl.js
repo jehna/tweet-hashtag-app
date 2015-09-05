@@ -84,11 +84,17 @@ angular.module('main')
     };
 
     var to;
-    var shutdown = false;
+    var shutdown;
     function loadMostRecent() {
         to = $timeout(function () {
-            MyHashtags.loadMostRecent(hashtag.name)
-            .then(function (tweets) {
+            var loader;
+            if (hashtag) {
+                loader = MyHashtags.loadMostRecentHashtag(hashtag.name);
+            } else {
+                loader = MyHashtags.loadMostRecentList(listid);
+            }
+            
+            loader.then(function (tweets) {
                 $scope.tweets = tweets;
             })
             .finally(function () {
@@ -98,12 +104,24 @@ angular.module('main')
             });
         }, 1000 * 10);
     }
-    loadMostRecent();
-    $scope.$on('$destroy', function () {
+    function resumeRefreshing() {
+        shutdown = false;
+        loadMostRecent();
+    }
+    function stopRefreshing() {
         if (to) {
             shutdown = true;
             $timeout.cancel(to);
         }
+    }
+    resumeRefreshing();
+    
+    $window.document.addEventListener('resume', resumeRefreshing);
+    $window.document.addEventListener('pause', stopRefreshing);
+    $scope.$on('$destroy', function () {
+        stopRefreshing();
+        $window.document.removeEventListener('resume', resumeRefreshing);
+        $window.document.removeEventListener('pause', stopRefreshing);
     });
     
     $scope.getTitle = function () {
