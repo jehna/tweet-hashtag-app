@@ -36,6 +36,9 @@
         <splash height="1136" src="res/ios/splash-640x1136.png" width="640" />
         <splash height="1334" src="res/ios/splash-750x1334.png" width="750" />
         <splash height="2208" src="res/ios/splash-1242x2208.png" width="1242" />
+        <preference name="AutoHideSplashScreen" value="false" />
+        <preference name="FadeSplashScreen" value="true"/>
+        <preference name="FadeSplashScreenDuration" value="0.3"/>
     </platform>
     <engine name="ios" spec="^3.8.0" />
     <engine name="android" spec="^4.0.2" />
