@@ -11,7 +11,7 @@
                         <div class="poster" ng-click="openUser(tweet.user.screen_name)">@{{ tweet.user.screen_name }}</div>
                         <div class="message" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)" ng-bind-html="tweet.text"></div>
                         <div ng-if="tweet.entities.media.length > 0" class="tweet-image" ng-click="openTweet(tweet.id_str, tweet.user.screen_name)">
-                            <img ng-src="{{ tweet.entities.media[0].media_url }}{{ getMediaSize(tweet.entities.media[0]) }}" />
+                            <img ng-src="{{ tweet.entities.media[0].media_url_https }}{{ getMediaSize(tweet.entities.media[0]) }}" />
                         </div>
                     </div>
                 </div>
