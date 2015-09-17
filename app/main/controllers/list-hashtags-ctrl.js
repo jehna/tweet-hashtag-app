@@ -1,12 +1,12 @@
 'use strict';
 angular.module('main')
-.controller('ListHashtagsCtrl', function (Session, $window, MyHashtags, $scope, Dialogs, Twitter) {
+.controller('ListHashtagsCtrl', function (Session, $window, MyHashtags, $scope, Dialogs, Twitter, $location) {
     
     $scope.$on('$ionicView.enter', function () {
         $window.analytics.trackView('Hashtags');
         
         if (!Session.isLoggedIn()) {
-            $window.location.hash = '#/login';
+            $location.path('/login');
             return;
         }
         
