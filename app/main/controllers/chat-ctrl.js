@@ -5,7 +5,9 @@ angular.module('main')
     $scope.noMoreContent = false;
     
     $scope.$on('$ionicView.enter', function () {
-        $window.analytics.trackView('List');
+        if ($window.analytics) {
+            $window.analytics.trackView('List');
+        }
     });
     
     var twitterScheme = 'twitter://';

@@ -5,6 +5,7 @@ angular.module('main')
 
     function Twitter() {
         this.loggedin = false;
+        this.login();
     }
     
     Twitter.prototype.login = function () {
