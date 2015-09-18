@@ -1,5 +1,6 @@
 .chat-view {
-    background: rgba(0,102,255,0.2);
+    $bg-color: #F2F2F2;
+    background: $bg-color;
     
     a {
         text-decoration: none;
@@ -7,14 +8,17 @@
         color: inherit;
     }
     
+    $image-size: 60px;
     .user-image {
-        width: 45px;
-        height: 45px;
+        width: $image-size;
+        height: $image-size;
         border-radius: 50%;
         overflow: hidden;
         position: absolute;
         top: 14px;
         left: 10px;
+        border: 6px solid $bg-color;
+        z-index: 1;
         
         img {
             max-width: 100%;
@@ -26,34 +30,40 @@
         position: relative;
         display: block;
         padding-top: 35px;
+        margin-top: 10px;
         
         &.retweet {
             padding-top: 6px;
+            margin-top: 0px;
         }
     }
-
+    
+    
+    $speech-bubble-color: #FFF;
+    $speech-bubble-my-color: $positive;
+    
     .speech-bubble {
-        margin: 0px 30px 0 89px;
-        background: #f9f9f9;
-        border-radius: 0px 10px 10px 10px;
-        padding: 10px 18px;
+        background: $speech-bubble-color;
+        margin: -21px 30px 0 70px;
+        border-radius: 0px 10px 10px 20px;
+        padding: 17px 22px;
         position: relative;
         
         &:before {
             content: "";
             position: absolute;
-            border: 20px solid transparent;
+            border: ($image-size/2) solid rgba(0, 0, 0, 0);
             top: 0;
-            left: -20px;
+            left: -($image-size/2);
             display: block;
-            border-top-color: #f9f9f9;
+            border-top-color: $speech-bubble-color;
         }
     }
     
     .tweet-image {
         border-radius: 5px;
         overflow: hidden;
-        margin: 10px 0 7px;
+        margin: 10px 0 5px;
         
         img {
             width: 100%;
@@ -78,25 +88,25 @@
         
         .speech-bubble {
             color: #FFF;
-            background: #782167;
-            margin: 0 89px 0 30px;
+            background: $speech-bubble-my-color;
+            margin: -20px 70px 0 30px;
             border-radius: 10px 0 10px 10px;
             
             &:before {
                 left: auto;
-                right: -20px;
-                border-top-color: #782167;
+                right: -($image-size/2);
+                border-top-color: $speech-bubble-my-color;
             }
         }
     }
     
     .retweeter,
     .retweetee {
-        color: $energized;
+        color: #333;
         font-weight: bold;
     }
     .retweet-status {
-        color: $royal;
+        color: #333;
         font-weight: bold;
     }
     

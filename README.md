@@ -2,7 +2,7 @@
 > Hashtags is an app that allows you to easily track and Tweet on hashtags
 
 ## Screenshots
-<img src="https://cloud.githubusercontent.com/assets/2676795/9529805/03eb495c-4d05-11e5-916b-7663f4ef9a90.png" width="320"> <img src="https://cloud.githubusercontent.com/assets/2676795/9478525/20662582-4b81-11e5-9203-78f7e7f7ba38.png" width="320">
+<img src="https://s3.amazonaws.com/uploads.hipchat.com/118340/868486/5knS5FW6LNMLj66/upload.png" width="320"> <img src="https://cloud.githubusercontent.com/assets/2676795/9478525/20662582-4b81-11e5-9203-78f7e7f7ba38.png" width="320">
 
 
 ## Install
